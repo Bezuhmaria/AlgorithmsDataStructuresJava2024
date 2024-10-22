@@ -1,22 +1,26 @@
 package LinkedList;
 
 public class ListNode {
-      int val;
+      final int val; //Added final
       ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+      private boolean isEmpty = true;
 
-    @Override
+      ListNode() {val = 0;}
+      ListNode(final int val) { this.val = val; isEmpty = false; }
+      ListNode(final int val, ListNode next) { this.val = val; this.next = next; isEmpty = false;}
 
-    public String toString() {
-        StringBuilder result = new StringBuilder();
-        ListNode current = this;
-        while (current != null) {
-            result.append(current.val).append(" ");
-            current = current.next;
+        @Override
+        public String toString() {
+            String result = " ";
+            if(isEmpty) { return "[]"; }
+            ListNode current = null;
+            current = this;
+            while (current != null) {
+                result += current.val + " ";
+                current = current.next;
+            }
+            return result;
         }
-        return result.toString().trim();
-    }
 }
+
 

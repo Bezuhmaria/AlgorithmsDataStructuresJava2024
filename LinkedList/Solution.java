@@ -2,7 +2,7 @@ package LinkedList;
 
 public class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        ListNode comblist = new ListNode();
+        ListNode comblist = new ListNode(0, new ListNode(1));
         ListNode tail = comblist;
 
         while (list1 != null && list2 != null) {
